@@ -41,7 +41,7 @@ def fix_salary(salary):
     sall = []
     sall.append(salary)
     return sall
-with open('Jobsgo.json', encoding='utf-8') as json_file:
+with open('Data root/Jobsgo.json', encoding='utf-8') as json_file:
     datas = json.load(json_file)
 
 
@@ -49,5 +49,5 @@ for data in datas:
     data['Salary'] = fix_salary(data['Salary']) #fix salary
     data['Deadline'] = fix_deadline(data['Deadline'])
 
-# with open('jobsgo_after_fix.json', 'w', encoding='utf-8') as json_file:
-#   json.dump(datas, json_file, ensure_ascii=False)
+with open('Data_after_fix/jobsgo_after_fix.json', 'w', encoding='utf-8') as json_file:
+  json.dump(datas, json_file, ensure_ascii=False)
