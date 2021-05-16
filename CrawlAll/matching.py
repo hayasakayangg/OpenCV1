@@ -11,16 +11,22 @@ jobsgo = pd.read_json(jg_path, encoding='utf-8')
 timviec365 = pd.read_json(tv365, encoding='utf-8')
 topcv = pd.read_json(tcv, encoding='utf-8')
 
-left_careerbuilder = ["Job_Name"]
+left_timviec365 = ["Job_Name", "Company_Name", "Address", "Salary"]
 
-right_jobsgo = [ "Company_Name"]
+right_topcv = ["Job_Name", "Company_Name", "Address", "Salary"]
 
 matched_results = fuzzymatcher.fuzzy_left_join(
-    career_builder, jobsgo, left_careerbuilder, right_jobsgo,
-    left_id_col="Job_Name", right_id_col="Company_Name")
+    timviec365, topcv, left_timviec365, right_topcv,
+    left_id_col="Job_Name", right_id_col="Job_Name")
 
 cols = [
-    "best_match_score", "Job_Name", "Company_Name"
+    "best_match_score", "Job_Name_left", "Job_Name_right", "Company_Name_left",
+    "Company_Name_right", "Address_left", "Address_right", "Salary_left", "Salary_right"
 ]
 
-matched_results[cols].sort_values(by=['best_match_score'], ascending=False).head(5)
+matchedd = matched_results[cols].sort_values(
+    by=['best_match_score'], ascending=False).head(5)
+
+pd.set_option('display.max_columns', 10)
+
+print(matchedd)
