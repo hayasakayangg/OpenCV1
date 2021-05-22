@@ -6,7 +6,7 @@ import numpy as np
 
 def create_data_city():
     # Mở file việc làm
-    job_all = pd.read_csv('C:/Users/Admin/Desktop/CSV-THDL/allcr1/all_dup.csv')
+    job_all = pd.read_csv('C:/Users/Admin/PycharmProjects/OpenCV1/CrawlAll/Data_Crawled/final/all_AFTER_dup.csv')
 
     #Tạo bản sao
     df2 = job_all.copy()
@@ -53,12 +53,12 @@ def map(data):
     fig = px.choropleth_mapbox(data, geojson=vn, locations='City', color='Log',
                                featureidkey='properties.Name_VI',
                                color_continuous_scale="Viridis",
-                               range_color=(0, 3.5),
+                               range_color=(0, 3.7),
                                hover_name='Num of Job',
                                hover_data=['Num of Job'],
                                mapbox_style='carto-positron',
-                               center={'lat': 24, 'lon': 78},
-                               zoom=3,
+                               center={'lat': 16, 'lon': 107},
+                               zoom=4,
                                opacity=0.5
                                )
     fig.write_html("C:/Users/Admin/PycharmProjects/OpenCV1/CrawlAll/job_vn.html")

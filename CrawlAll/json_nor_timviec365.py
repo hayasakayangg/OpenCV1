@@ -43,5 +43,5 @@ for data in datas:
     data['Salary'] = fix_salary(data['Salary']) #fix salary
 
 
-# with open('timviec365_after_fix.json', 'w', encoding='utf-8') as json_file:
-#   json.dump(datas, json_file, ensure_ascii=False)
+with open('DataAfterFix/timviec365_after_fix.json', 'w', encoding='utf-8') as json_file:
+  json.dump(datas, json_file, ensure_ascii=False)

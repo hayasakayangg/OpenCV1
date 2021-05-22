@@ -52,5 +52,5 @@ for data in datas:
     data['Job_Kind'] = fix_job_kind(data['Job_Kind']) #fix jobkind
     data['Salary'] = fix_salary(data['Salary']) #fix salary
 
-# with open('CareerBuilder_after_fix.json', 'w', encoding='utf-8') as json_file:
+# with open('DataAfterFix/CareerBuilder_after_fix.json', 'w', encoding='utf-8') as json_file:
 #   json.dump(datas, json_file, ensure_ascii=False)

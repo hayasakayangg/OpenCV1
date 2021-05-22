@@ -13,7 +13,7 @@ class CrawlallItem(scrapy.Item):
     Job_Kind = scrapy.Field()
     Salary = scrapy.Field()
     Nature_Work = scrapy.Field()
-    Level = scrapy.Field()
     Describe = scrapy.Field()
     Requirement = scrapy.Field()
+    Level = scrapy.Field()
     Benefits = scrapy.Field()
